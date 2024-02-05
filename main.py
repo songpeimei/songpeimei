@@ -3,13 +3,16 @@ import random
 import os
 attack = '请输入进攻方向1：东，2：南，3：西，4：北'
 defend = '请输入防守方向1：东，2：南，3：西，4：北'
+error_out = '输入错误，即将退出'
+rule_game = '游戏规则：玩家首先输入进攻方向，电脑随机防守，方向一致则为进攻失败，反之则为进攻成功，玩家输入防守方向，电脑随机进攻，每方各五次机会。按任意键继续'
+init_word = '输入1 开始游戏,输入2 查看规则,输入3退出 \n'
 score_player = 0
 score_computer = 0
 while True:
-    if_begin = input('输入1 开始游戏,输入2 查看规则,输入3退出 \n')
+    if_begin = input(init_word)
     if if_begin == '2':
         os.system('cls')
-        print('游戏规则：玩家首先输入进攻方向，电脑随机防守，方向一致则为进攻失败，反之则为进攻成功，玩家输入防守方向，电脑随机进攻，每方各五次机会。按任意键继续')
+        print(rule_game)
         input()
         continue
     elif if_begin == '1':
@@ -40,5 +43,5 @@ while True:
     elif if_begin == '3':
         break
     else:
-        print('输入错误，即将退出')
+        print(error_out)
         break
